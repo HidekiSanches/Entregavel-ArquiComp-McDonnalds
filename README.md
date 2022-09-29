@@ -1,1 +1,1 @@
-# Exercicio-ArquiComp-McDonnalds
+# McDonnald's
