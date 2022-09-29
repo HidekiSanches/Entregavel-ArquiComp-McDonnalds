@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonnald's</title>
+    <link rel="stylesheet" href="style-mcdonnalds.css">
+
+</head>
+<body>
+    <div class="true-table">
+        <h1>Equação lógica para decidir se devo ou não ir no
+            McDonnald’s</h1>
+        <div class="box">
+            <img src="assets/mac.png" alt="" width="150px" class="img">
+
+            <div class="entry-A">
+                <span>Está chovendo:</span>
+                <select id="sel_A">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div class="entry-B">
+                <span>Tenho dinheiro:</span>
+                <select id="sel_B">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div class="entry-C">
+                <span>Tenho tempo:</span>
+                <select id="sel_C">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div class="entry-D">
+                <span>Gosto de nuggets:</span>
+                <select id="sel_D">
+                    <option value="">--Selecione uma opção</option>
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div>
+                <button class="button" onclick="mostrar()">Verificar entradas</button>
+            </div>
+            <div class="exit">
+                <span>Eu irei no McDonnald’s?</span>
+                <div class="msg" id="msg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+        msg.style="display: none"
+    function mostrar(){
+        var a = sel_A.value
+        var b = sel_B.value
+        var c = sel_C.value
+        var d = sel_D.value
+        if (sel_A.value == "" || sel_B.value == "" || sel_C.value == "" || sel_D.value == ""){
+            msg.style="display: none"
+            alert(`Selecione uma opção valida`)
+        } else {
+            if (a == 0 && b == 0 && c ==1 && d==0 || a==0 && b==0 && c==1 && d==1 || a==0 && b==1 && c==1 && d==1 || a==1 && b==0 && c==1 && d==1 || a==1 && b==1 && c==1 && d==1){
+                msg.style="display: block"
+                msg.innerHTML = `Sim`
+            } else {
+                msg.style="display: block"
+                msg.innerHTML = `Não`
+            }
+        }
+    }
+</script>
